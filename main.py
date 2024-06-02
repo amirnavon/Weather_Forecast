@@ -1,6 +1,6 @@
 import requests
 
-api_key = 'a2ea41563a89e46d5877cb84f24215d5'
+api_key = ''
 
 user_input = input("Enter city: ")
 
