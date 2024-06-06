@@ -1,11 +1,15 @@
+import streamlit as st
+import pandas as pd
 import requests
+from datetime import datetime
+import pytz
 
-api_key = ''
+api_key = 'a2ea41563a89e46d5877cb84f24215d5'
 
-user_input = input("Enter city: ")
+city_input = input("Enter city name: ")
 
 weather_data = requests.get(
-    f"https://api.openweathermap.org/data/2.5/weather?q={user_input}&appid={api_key}"
+    f"https://api.openweathermap.org/data/2.5/weather?q={city_input}&appid={api_key}"
 )
 
 if weather_data.json()['cod'] == '404':
@@ -14,5 +18,8 @@ else:
     weather = weather_data.json()['weather'][0]['main']
     temp = round(weather_data.json()['main']['temp'])
     humidity = weather_data.json()['main']['humidity']
-    print(f"The weather now in {user_input.capitalize()} is {weather}.\nthe temperature is {temp} \u00b0F\nand the "
-          f"humidity is {humidity}")
+    print(f"The weather now in {city_input.capitalize()} is {weather}, "
+          f"temperature is {temp}\u00b0F and humidity is {humidity}."
+          )
+
+
