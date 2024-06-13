@@ -14,7 +14,7 @@ def get_weather(city):
     weather_data = requests.get(
         f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
     )
-    # if no response from openweathermap
+    # if no info response from openweathermap
     if weather_data.json()['cod'] == '404':
         return "No City Found, try different location"
     else:
@@ -43,6 +43,7 @@ def main():
         weather_info = st.write(get_weather(city_input))
         if weather_info:
             st.write(weather_info)
+    # Default sentence
     else:
         st.write("Please enter a city name to get the weather.")
 
