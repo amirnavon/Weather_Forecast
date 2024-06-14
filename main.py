@@ -7,7 +7,7 @@ def get_weather(city):
     """
     This function gets a city name and returns uptodate data from the online service 'openweathermap'.
     Data contains locations' UTC date and time, weather, temperature, humidity.
-    :return: content: text to display
+    :return: text to display
     :rtype: string
     """
     api_key = 'a2ea41563a89e46d5877cb84f24215d5'
